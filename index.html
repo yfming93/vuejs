@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<title>袁凤鸣 | Vuejs2.0购物车demo</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="/static/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
+
+<!--[if IE 7]>
+  <link rel="stylesheet" href="/static/font-awesome/css/font-awesome-ie7.min.css">
+<![endif]-->
+
+<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+<script src="github-list.js"></script>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script type="text/javascript"> 
+
+
+
+
+
+</script>
+
+<style>
+
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #FFF;
+    -webkit-box-shadow: inset 1px 1px 2px rgba(0,0,0,0.1);
+}
+::-webkit-scrollbar-thumb {
+    background: #CCC;
+    -webkit-box-shadow: inset 1px 1px 2px rgba(0,0,0,0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #AAA;
+}
+::-webkit-scrollbar-thumb:active {
+    background: #888;
+    -webkit-box-shadow: inset 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+::selection {
+    background: #9954bb; 
+    color:white;
+}
+
+::-moz-selection  {
+    background: #9954bb; 
+    color:white;
+}
+
+body {
+    width: 0 auto;
+    margin: 0 auto;
+    font-family: "Helvetica","Microsoft Yahei","微软雅黑","Arial","sans-serif";
+}
+
+a {  
+   color:#007fff;
+}
+
+#fix-top-header {
+    display: block;
+    position: fixed;
+    top: 0;
+    opacity: .95;
+    box-shadow: 0 1px 1px #D0D0D0;
+    z-index: 100;
+    padding: 0;
+    padding-left: 10px;
+    width: 100%;
+    height: 35px;
+    background-color: #F7F7F7;
+    border-bottom: 1px solid #FAFAFA;
+    line-height: 35px;
+    font-weight: bold;
+}
+
+#fix-top-inner {
+    float:left;
+}
+#fix-top-action {
+    float:right;
+    padding-right: 10px;
+}
+    
+.list {
+    margin-top: 35px;
+}
+
+.list-box {
+    border: 1px solid #8e7cc3;
+}
+.list-box-inner {
+    border-top: 1px solid #007fff;
+}
+.list-box-heading {
+    font-weight: bold;
+    background-color: #007fff;
+}
+.list-box-heading a,
+.list-box-heading a:hover,
+.list-box-heading a:active,
+.list-box-heading a:visited {
+    padding: 5px;
+    display: block;
+    outline: 0;
+    color: #FFF;
+    text-decoration: none;
+    background-color: #6aa84f;
+}
+
+
+.list-box-inner .list-box-heading a,
+.list-box-inner .list-box-heading a:hover,
+.list-box-inner .list-box-heading a:active,
+.list-box-inner .list-box-heading a:visited {
+    background-color: #79bcff;
+}
+
+.list-box-heading a:hover,
+.list-box-heading a:active {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+
+.list-box-inner .list-box {
+    border: 1px solid #d9d9d9;
+}
+.list-box-inner .list-box-inner {
+    border-top: 1px solid #79bcff;
+}
+.list-box-inner .list-box-heading {
+    background-color: #79bcff;
+}
+
+
+.list-box-heading i{
+    float:right;
+    padding-right:5px;
+}
+
+.list-box-inner-wrap {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+}
+
+.table-hover tbody tr:hover td, 
+.table-hover tbody tr:hover th {
+    background-color: #e06666;
+}
+
+.table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+.table th, 
+.table td {
+    padding: 5px;
+    line-height: 20px;
+    text-align: left;
+    vertical-align: top;
+    border-top: 0px;
+}
+
+.scroll-top {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    padding: 10px;
+    padding-top: 0px;
+    width: 20px;
+    height: 25px;
+    z-index: 1000;
+    color: #FFF;
+    text-align: center;
+    font-size: 30px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+</style>
+</head>
+
+<body>
+
+
+
+
+    <div class="list"></div>
+    <a target="_blank" style="text-align:center;width: 100%" href="./VueShoppingCart/after/cart.html" >Vue2.0购物车demo【已经完成的页面】</a>
+    <br> <br> <br>
+    <a  target="_blank" style="text-align:center;width: 100%"  href="./VueShoppingCart/before/cart.html">Vue2.0购物车demo【素材页面】</a>
+     <br> <br> <br>
+     <a  target="_blank" style="text-align:center;width: 100%"  href="https://www.yfmingo.cn/2017/09/21/Vuejs-Learning-notes/">Vue2.0学习总结</a>
+      <br>
+    <div class="scroll-top" style="display:none;"> <i class="icon-angle-up">↑</i></div>
+ 	
+
+    
+        <div class="wrapper" style=" text-align:center;">
+ 
+        
+            <span >
+            
+                <a target="_blank" href= "https://www.yfmingo.cn/">
+
+
+                    <span style="color:#003399;" class="fa-stack fa-lg" >
+
+                        <i class="fa fa-circle fa-stack-2x" > </i>
+                        <i class="fa fa-home fa-stack-1x fa-inverse"></i>
+                    </span>
+
+                </a>
+
+
+ 
+                <a target="_blank" href="https://www.zhihu.com/people/yfmingo">
+                    <span style="color:#003399;" class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa  fa-stack-1x fa-inverse">知</i>
+                    </span>
+                </a>
+
+                <a target="_blank" href="https://weibo.com/yfming">
+                    <span style="color:#003399;" class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+          
+                <a target="_blank" href="https://github.com/yfming93">
+                    <span style="color:#003399;" class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                    </span>
+                </a>
+        
+                <a target="_blank" href="https://music.163.com/#/user/home?id=278546999">
+                    <span style="color:#003399;" class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa  fa-stack-1x fa-inverse">网</i>
+                    </span>
+                </a>
+
+                <a target="_blank" href="https://yfming93.coding.me/repos/">
+                    <span style="color:#003399;" class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-heart fa-stack-1x fa-inverse"></i>  
+                    </span>
+                </a>
+ 
+
+
+               <p>
+           
+                <span id="busuanzi_container_site_pv">
+                    本页面总访问量<span id="busuanzi_value_site_pv"></span>次
+                </span>
+               </p>
+
+
+                <div class="text" style=" text-align:center;">
+                    Copyright &copy; 袁凤鸣 2017
+                </div>
+
+ 
+            </span>
+  
+        <!-- </p> -->
+    </div>
+
+
+    <!-- 网易云跟帖 评论框 start -->
+<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+<script>
+var cloudTieConfig = {
+  url: document.location.href, 
+  sourceId: "",
+  productKey: "3b85adc4e0854238ab13c9a8c94d6c02",
+  target: "cloud-tie-wrapper"
+};
+var yunManualLoad = true;
+Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
+</script>
+<!-- 网易云跟帖 评论框 end -->
+
+     <script>
+    // 百度统计代码
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1b99a6addc30aac294cc600d2664427c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+
+
+
+</body>
+</html>
