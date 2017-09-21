@@ -1,0 +1,18 @@
+{
+  "name": "vuejs",
+  "version": "1.0.0",
+  "description": "这是袁凤鸣的第一个Vuejs2.0开发的购物车程序。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue，shopping"
+  ],
+  "author": "袁凤鸣",
+  "license": "ISC",
+  "dependencies": {
+    "vue": "^2.4.4",
+    "vue-resource": "^1.3.4"
+  }
+}
