@@ -84,7 +84,7 @@
                       </div>
                     </div>
                     <div class="cart-tab-2">
-                      <div class="item-price">{{item.productPrice | formatMoney('元')}}</div>
+                      <div class="item-price" v-cloak>{{item.productPrice | formatMoney('元')}}</div>
                     </div>
                     <div class="cart-tab-3">
                       <div class="item-quantity">
@@ -99,7 +99,7 @@
                       </div>
                     </div>
                     <div class="cart-tab-4">
-                      <div class="item-price-total">{{item.productPrice * item.productQuantity | formatMoney('元')}}</div>
+                      <div class="item-price-total" v-cloak>{{item.productPrice * item.productQuantity | formatMoney('元')}}</div>
                     </div>
                     <div class="cart-tab-5">
                       <div class="cart-item-operation">
@@ -132,7 +132,7 @@
               </div>
               <div class="cart-foot-r">
                 <div class="item-total">
-                  选中商品总价: <span class="total-price" >{{totalPrice | formatMoney('元')}}</span>
+                  选中商品总价: <span class="total-price" v-cloak >{{totalPrice | formatMoney('元')}}</span>
                 </div>
                 <div class="next-btn-wrap">
                   <a href="address.html" v-bind:class="{'onclick':address}" class="btn btn--red" style="width: 200px" @click="goPay()">结账</a>
