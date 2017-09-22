@@ -65,9 +65,9 @@
             <ul>
               <li v-for="(address, index) in filterAddress" v-bind:class="{'check':index == curentIndex}" @click="curentIndex = index">
                 <dl>
-                  <dt>{{address.userName}}</dt>
-                  <dd class="address">{{address.streetName}}</dd>
-                  <dd class="tel">{{address.tel}}</dd>
+                  <dt v-text="address.userName"></dt>
+                  <dd class="address" v-text="address.streetName"></dd>
+                  <dd class="tel" v-text="address.tel"></dd>
                 </dl>
                 <div class="addr-opration addr-edit">
                   <a href="javascript:;" class="addr-edit-btn">

@@ -74,7 +74,7 @@
                         <img v-bind:src="item.productImage" alt="烟">
                       </div>
                       <div class="cart-item-title">
-                        <div class="item-name">{{item.productName}}</div>
+                        <div class="item-name" v-text="item.productName"></div>
                       </div>
                       <div class="item-include">
                         <dl>
